@@ -8,8 +8,10 @@ This repository contains section work and task work for **CSE321: Computer Organ
 
 ```bash
 CSE321-Computer-Organization/
-├── labs/               # MIPS assembly lab exercises (QtSPIM)
-│   ├── lab1/           # Hello World program
+├── labs/               
+│   ├── lab1/           
+│   │   └── screenshots/
+│   │   └── ...
 │   └── ...
 │
 └── README.md           # Project overview (this file)
