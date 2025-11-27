@@ -10,8 +10,7 @@ B:  .word 6
 # ===========================
 compute:
     # Callee-save
-    addi $sp, $sp, -8
-    sw   $ra, 4($sp)
+    addi $sp, $sp, -4
     sw   $s0, 0($sp)
 
     # Body
@@ -21,8 +20,7 @@ compute:
 returncompute:
     # Callee-restore
     lw   $s0, 0($sp)
-    lw   $ra, 4($sp)
-    addi $sp, $sp, 8
+    addi $sp, $sp, 4
 
     jr   $ra
 
@@ -37,7 +35,7 @@ main:
 
     # Caller-save  
     addi $sp, $sp, -4
-    sw   $s0, 0($sp)
+    sw   $ra, 0($sp)
 
     move $a0, $t0
     move $a1, $t1
@@ -52,9 +50,8 @@ main:
     syscall
 
     # Caller-restore
-    lw   $s0, 0($sp)
+    lw   $ra, 0($sp)
     addi $sp, $sp, 4
 
 returnmain:
-    li $v0, 10
-    syscall
+    jr $ra
