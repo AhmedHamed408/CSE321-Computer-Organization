@@ -57,7 +57,7 @@ fib_loop:
     j fib_loop
 
 fib_done:
-    move $v0, $t3       # result = last fib
+    move $v0, $t3       # result 
     jr $ra
     
 fib_return_zero:
